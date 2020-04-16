@@ -142,7 +142,8 @@ var questions = [
   SizedBox(
     height: 15.0,
   ),
-  getCard("هل توجد أي أدوية أو علاجات يمكنها الوقاية من مرض كوفيد-19 أو علاجه ؟",
+  getCard(
+      "هل توجد أي أدوية أو علاجات يمكنها الوقاية من مرض كوفيد-19 أو علاجه ؟",
       """ في حين قد تريح بعض الأدوية الغربية أو التقليدية أو المنزلية من بعض أعراض كوفيد-19 أو تخففها، فليست هناك بيّنة على وجود أدوية حالياً من شأنها الوقاية من هذا المرض أو علاجه. ولا توصي المنظمة بالتطبيب الذاتي بواسطة أي أدوية، بما في ذلك المضادات الحيوية، سواء على سبيل الوقاية من مرض كوفيد-19 أو معالجته. غير أن هناك عدة تجارب سريرية جارية تتضمن أدوية غربية وتقليدية معاً. وستواصل المنظمة إتاحة معلومات محدّثة بهذا الشأن عندما تتوفر النتائج السريرية. """),
   SizedBox(
     height: 15.0,
@@ -277,15 +278,7 @@ var questions = [
   )
 ];
 
-final List<String> covidList =[
-  'images/protect-yourself_against_coronoa_at_workspace_1.jpg',
-  'images/protect-yourself_against_coronoa_at_workspace_2.jpg',
-  'images/protect-yourself_against_coronoa_at_workspace_3.jpg',
-  'images/protect-yourself_against_coronoa_at_workspace_4.jpg',
-  'images/protect-yourself_against_coronoa_at_workspace_5.jpg',
-  'images/protect-yourself_against_coronoa_at_workspace_6.jpg',
-  'images/protect-yourself_against_coronoa_at_workspace_7.jpg',
-  'images/protect-yourself_against_coronoa_at_workspace_8.jpg',
+final List<String> covidList = [
   'images/corona_virus_mask_1.jpg',
   'images/corona_virus_mask_2.jpg',
   'images/corona_virus_mask_3.jpg',
