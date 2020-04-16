@@ -10,7 +10,7 @@ class Questions extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.lightGreen[700],
+            color: Colors.grey,
           ),
           ListView.builder(
               itemCount: questions.length,

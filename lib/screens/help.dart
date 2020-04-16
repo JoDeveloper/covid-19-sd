@@ -13,14 +13,14 @@ class Info extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.lightGreen[700],
+            color: Colors.grey,
           ),
           ListView(
             children: <Widget>[
               UnDraw(
                 color: Colors.lightGreen,
                 width: 250.0,
-                illustration: UnDrawIllustration.calling,
+                illustration: UnDrawIllustration.doctors,
               ),
               const Align(
                 alignment: Alignment.topRight,
@@ -186,7 +186,7 @@ class Info extends StatelessWidget {
                       child: Text(
                         "  Joseph ",
                         style: TextStyle(
-                          color: Colors.blue[50],
+                          color: Colors.blue,
                         ),
                       ),
                       onTap: null,

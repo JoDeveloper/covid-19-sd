@@ -14,12 +14,12 @@ class HomePage extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          color: Colors.lightGreen[700],
+          color: Colors.grey,
         ),
         ListView(
           children: <Widget>[
             UnDraw(
-              color: Colors.green,
+              color: Colors.lightGreen,
               illustration: UnDrawIllustration.doctor,
               height: hp(20),
               errorWidget: Center(),

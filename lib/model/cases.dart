@@ -22,13 +22,16 @@ class Cases {
 
   factory Cases.fromJson(Map<String, dynamic> parsedJson) {
     return Cases(
-        totalCases: parsedJson['cases'],
-        todayCases: parsedJson['todayCases'] ?? 0,
-        deaths: parsedJson['deaths'] ?? 0,
-        todayDeaths: parsedJson['todayDeaths'] ??0,
-        recovered: parsedJson['recovered'] ?? 0,
-        activeCases: parsedJson['activeCases'] ?? 0,
-        updated: DateTime.fromMicrosecondsSinceEpoch(parsedJson['updated']) ?? DateTime.now().toLocal(),
-        critical: parsedJson['critical']) ??0;
+            totalCases: parsedJson['cases'],
+            todayCases: parsedJson['todayCases'] ?? 0.0,
+            deaths: parsedJson['deaths'] ?? 0.0,
+            todayDeaths: parsedJson['todayDeaths'] ?? 0.0,
+            recovered: parsedJson['recovered'] ?? 0.0,
+            activeCases: parsedJson['activeCases'] ?? 0.0,
+            updated:
+                DateTime.fromMicrosecondsSinceEpoch(parsedJson['updated']) ??
+                    DateTime.now().toLocal(),
+            critical: parsedJson['critical']) ??
+        0.0;
   }
 }

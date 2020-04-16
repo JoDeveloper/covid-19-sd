@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: GoogleFonts.tajawal().fontFamily,
-        primarySwatch: Colors.lightGreen,
+        primarySwatch: Colors.grey,
       ),
       home: Provider(create: (context) => CasesProivder(), child: MyHomePage()),
     );
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       default:
         return new Container(
-          color: Colors.lightGreen[700],
+          color: Colors.grey,
           child: const Center(
             child: ListTile(
               title: const Icon(
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
-        backgroundColor: Colors.lightGreen[700],
+        backgroundColor: Colors.grey,
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 400),
         onTap: (int index) {
