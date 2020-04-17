@@ -21,14 +21,14 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 //    https://www.youtube.com/watch?v=VC8v-uo9RiY
-    _controller = VideoPlayerController.asset('images/corona.mp4')
-      ..initialize().then((_) {
-        _controller.setLooping(true);
-        Timer.periodic(Duration(seconds: 10), (Timer t) {
-          _controller.play();
-        });
-        setState(() {});
-      });
+//    _controller = VideoPlayerController.asset('images/corona.mp4')
+//      ..initialize().then((_) {
+//        _controller.setLooping(true);
+//        Timer.periodic(Duration(seconds: 30), (Timer t) {
+//          _controller.play();
+//        });
+//        setState(() {});
+//      });
   }
 
   @override
@@ -78,25 +78,27 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
-                  Center(
-                    child: _controller.value.initialized
-                        ? Container(
-                            width: wp(95),
-                            height: hp(40),
-                            child: AspectRatio(
-                              aspectRatio: _controller.value.aspectRatio,
-                              child: VideoPlayer(_controller),
-                            ),
-                          )
-                        : Center(child: CircularProgressIndicator()),
-                  ),
+
+//                  Center(
+//                    child: _controller.value.initialized
+//                        ? Container(
+//                            width: wp(95),
+//                            height: hp(40),
+//                            child: AspectRatio(
+//                              aspectRatio: _controller.value.aspectRatio,
+//                              child: VideoPlayer(_controller),
+//                            ),
+//                          )
+//                        : Center(child: CircularProgressIndicator()),
+//                  ),
+//                  const SizedBox(
+//                    height: 20.0,
+//                  ),
                   CarouselSlider(
                     autoPlayInterval: Duration(seconds: 10),
-                    viewportFraction: 0.9,
-                    aspectRatio: 2.0,
+//                    viewportFraction: 0.9,
+                    aspectRatio: 4/2,
+
                     autoPlay: true,
                     enlargeCenterPage: true,
                     items: covidList.map(
@@ -107,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(5.0)),
                             child: Image.asset(url,
-                                fit: BoxFit.cover, width: wp(200.0)),
+                                fit: BoxFit.fill, width: wp(450.0)),
                           ),
                         );
                       },
