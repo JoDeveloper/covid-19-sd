@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../utils/covid.dart';
+import '../utils/covidData.dart';
 
 class Questions extends StatelessWidget {
   @override

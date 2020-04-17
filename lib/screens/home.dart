@@ -1,12 +1,36 @@
+import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 import 'package:undraw/undraw.dart';
+import 'package:video_player/video_player.dart';
 
-import '../utils/covid.dart';
+import '../utils/covidData.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  VideoPlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+//    https://www.youtube.com/watch?v=VC8v-uo9RiY
+    _controller = VideoPlayerController.asset('images/corona.mp4')
+      ..initialize().then((_) {
+        _controller.setLooping(true);
+        Timer.periodic(Duration(seconds: 10), (Timer t) {
+          _controller.play();
+        });
+        setState(() {});
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     final Function wp = Screen(context).wp;
@@ -57,6 +81,18 @@ class HomePage extends StatelessWidget {
                   const SizedBox(
                     height: 10.0,
                   ),
+                  Center(
+                    child: _controller.value.initialized
+                        ? Container(
+                            width: wp(95),
+                            height: hp(40),
+                            child: AspectRatio(
+                              aspectRatio: _controller.value.aspectRatio,
+                              child: VideoPlayer(_controller),
+                            ),
+                          )
+                        : Center(child: CircularProgressIndicator()),
+                  ),
                   CarouselSlider(
                     autoPlayInterval: Duration(seconds: 10),
                     viewportFraction: 0.9,
@@ -84,5 +120,11 @@ class HomePage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
