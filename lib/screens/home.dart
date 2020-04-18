@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 import 'package:undraw/undraw.dart';
-import 'package:video_player/video_player.dart';
 
 import '../utils/covidData.dart';
 
@@ -15,21 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  VideoPlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-//    https://www.youtube.com/watch?v=VC8v-uo9RiY
-//    _controller = VideoPlayerController.asset('images/corona.mp4')
-//      ..initialize().then((_) {
-//        _controller.setLooping(true);
-//        Timer.periodic(Duration(seconds: 30), (Timer t) {
-//          _controller.play();
-//        });
-//        setState(() {});
-//      });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,22 +62,6 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     height: 20.0,
                   ),
-
-//                  Center(
-//                    child: _controller.value.initialized
-//                        ? Container(
-//                            width: wp(95),
-//                            height: hp(40),
-//                            child: AspectRatio(
-//                              aspectRatio: _controller.value.aspectRatio,
-//                              child: VideoPlayer(_controller),
-//                            ),
-//                          )
-//                        : Center(child: CircularProgressIndicator()),
-//                  ),
-//                  const SizedBox(
-//                    height: 20.0,
-//                  ),
                   CarouselSlider(
                     autoPlayInterval: Duration(seconds: 10),
 //                    viewportFraction: 0.9,
@@ -124,9 +92,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  @override
-  void dispose() {
-//    _controller.dispose();
-    super.dispose();
-  }
 }

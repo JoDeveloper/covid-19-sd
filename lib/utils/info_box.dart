@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class InfoBox extends StatelessWidget {
   final String title;
@@ -48,22 +47,13 @@ class InfoBox extends StatelessWidget {
                       ),
                       SizedBox(width: 25.0),
                       number == null
-                          ? SpinKitFadingCircle(
-                              itemBuilder: (BuildContext context, int index) {
-                                return DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    color: color,
-                                  ),
-                                );
-                              },
-                            )
+                          ? CircularProgressIndicator()
                           : Text(
                               '$number',
                               style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white
-                              ),
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                               textAlign: TextAlign.center,
                             ),
                     ],
