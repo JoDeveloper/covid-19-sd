@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     return Stack(
       children: <Widget>[
         Container(
-          color: Colors.grey,
+          color: Colors.transparent,
         ),
         ListView(
           children: <Widget>[
@@ -56,14 +56,14 @@ class _HomePageState extends State<HomePage> {
                   title: Text(
                     "مرحبا",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 50,
                         fontWeight: FontWeight.w700),
                   ),
                   subtitle: Text(
                     "كيف تشعر اليوم ؟",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 20,
                     ),
                   ),
@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    _controller.dispose();
+//    _controller.dispose();
     super.dispose();
   }
 }

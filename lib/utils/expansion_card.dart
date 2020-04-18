@@ -8,7 +8,7 @@ ExpansionTileCard getCard(String title, String description) {
     expandedColor: Colors.transparent,
     leading: Icon(
       Icons.info_outline,
-      color: Colors.white,
+      color: Colors.black,
     ),
     title: Directionality(
       textDirection: TextDirection.rtl,
@@ -16,7 +16,7 @@ ExpansionTileCard getCard(String title, String description) {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           title,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
       ),
     ),
@@ -36,7 +36,7 @@ ExpansionTileCard getCard(String title, String description) {
             textDirection: TextDirection.rtl,
             child: Text(
               """ $description""",
-              style: TextStyle(color: Colors.white,fontSize: 15.0),
+              style: TextStyle(color: Colors.black,fontSize: 15.0),
             ),
           ),
         ),

@@ -19,17 +19,17 @@ class CasesScreen extends StatelessWidget {
     final String recovered = "حالات شَفيت";
     final String activeCases = "تحت الرعاية الطبية";
     final List<Color> listColors = [
-      Colors.red[50],
-      Colors.red[400],
-      Colors.green[700],
-      Colors.amberAccent
+      Colors.blueGrey[800],
+      Colors.red,
+      Colors.green,
+      Colors.blue
     ];
 
     return Scaffold(
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.grey,
+            color: Colors.transparent,
             child: ListView(
               children: <Widget>[
                 StreamBuilder<Cases>(
@@ -62,6 +62,7 @@ class CasesScreen extends StatelessWidget {
                                       animationDuration:
                                           Duration(milliseconds: 5000),
                                       colorList: listColors,
+                                      chartValueBackgroundColor: Colors.white,
                                     ),
                                   ),
                                   const SizedBox(height: 25.0),
@@ -69,20 +70,20 @@ class CasesScreen extends StatelessWidget {
                                     children: <Widget>[
                                       InfoBox(
                                         titleColor: Colors.white,
-                                        bgColor: Colors.red[400],
+                                        bgColor: Colors.blueGrey[800],
                                         title: '$deaths',
                                         number: snapshot.data.deaths,
-                                        color: Colors.red[100],
+                                        color: Colors.blueGrey[300],
                                         icon: Icon(Icons.linear_scale,
                                             color: Colors.white, size: 25),
                                       ),
                                       const SizedBox(width: 15.0),
                                       InfoBox(
-                                        titleColor: Colors.black,
-                                        bgColor: Colors.red[50],
+                                        titleColor: Colors.white,
+                                        bgColor: Colors.red,
                                         title: '$totalCases',
                                         number: snapshot.data.totalCases,
-                                        color: Colors.blue,
+                                        color: Colors.red[300],
                                         icon: Icon(FontAwesome.bed,
                                             color: Colors.white, size: 25),
                                       ),
@@ -92,21 +93,21 @@ class CasesScreen extends StatelessWidget {
                                   Row(
                                     children: <Widget>[
                                       InfoBox(
-                                        titleColor: Colors.black,
-                                        bgColor: Colors.green[700],
+                                        titleColor: Colors.white,
+                                        bgColor: Colors.green,
                                         title: '$recovered',
                                         number: snapshot.data.recovered,
-                                        color: Colors.green,
+                                        color: Colors.green[400],
                                         icon: Icon(FontAwesome.check_circle_o,
                                             color: Colors.white, size: 25),
                                       ),
                                       const SizedBox(width: 15.0),
                                       InfoBox(
-                                        titleColor: Colors.black,
-                                        bgColor: Colors.amberAccent,
+                                        titleColor: Colors.white,
+                                        bgColor: Colors.blue,
                                         title: '$activeCases',
                                         number: snapshot.data.activeCases,
-                                        color: Colors.green,
+                                        color: Colors.blue[300],
                                         icon: Icon(Icons.mood,
                                             color: Colors.white, size: 25),
                                       ),

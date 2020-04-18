@@ -108,9 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.black,
           ),
         ],
-        color: Colors.white,
-        buttonBackgroundColor: Colors.white,
-        backgroundColor: Colors.grey,
+        color: Colors.transparent.withGreen(10),
+        buttonBackgroundColor: Colors.transparent.withGreen(10),
+        backgroundColor: Colors.transparent.withGreen(10),
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 400),
         onTap: (int index) {

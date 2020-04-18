@@ -62,6 +62,7 @@ class InfoBox extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.white
                               ),
                               textAlign: TextAlign.center,
                             ),

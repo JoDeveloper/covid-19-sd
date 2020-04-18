@@ -27,7 +27,7 @@ var questions = [
       child: Text(
         "كورونا ؟",
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 50.0,
           fontWeight: FontWeight.w900,
         ),
@@ -36,7 +36,7 @@ var questions = [
     trailing: Icon(
       Icons.local_hospital,
       size: 50.0,
-      color: Colors.white,
+      color: Colors.black,
     ),
   ),
   SizedBox(

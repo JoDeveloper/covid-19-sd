@@ -13,7 +13,7 @@ class Info extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.grey,
+            color: Colors.transparent,
           ),
           ListView(
             children: <Widget>[
@@ -21,6 +21,16 @@ class Info extends StatelessWidget {
                 color: Colors.lightGreen,
                 width: 250.0,
                 illustration: UnDrawIllustration.doctors,
+              ),
+              const Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "خليك في البيت ",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
               ),
               const Align(
                 alignment: Alignment.topRight,
@@ -31,7 +41,7 @@ class Info extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -100,7 +110,7 @@ class Info extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
