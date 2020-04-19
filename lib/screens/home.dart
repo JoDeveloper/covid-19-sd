@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -22,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Stack(
       children: <Widget>[
         Container(
-          color: Colors.transparent,
+          color: Colors.white,
         ),
         ListView(
           children: <Widget>[

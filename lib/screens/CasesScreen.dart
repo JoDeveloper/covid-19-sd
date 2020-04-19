@@ -1,3 +1,4 @@
+import 'package:covidsudan/model/world_cases.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -29,9 +30,10 @@ class CasesScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.transparent,
+            color: Colors.white,
             child: ListView(
               children: <Widget>[
+                const SizedBox(height: 35.0),
                 StreamBuilder<Cases>(
                     stream: cases.cases,
                     builder: (context, snapshot) {
@@ -73,9 +75,10 @@ class CasesScreen extends StatelessWidget {
                                         bgColor: Colors.blueGrey[800],
                                         title: '$deaths',
                                         number: snapshot.data.deaths,
-                                        color: Colors.blueGrey[300],
+                                        color: Colors.white,
                                         icon: Icon(Icons.linear_scale,
-                                            color: Colors.white, size: 25),
+                                            color: Colors.blueGrey[800],
+                                            size: 25),
                                       ),
                                       const SizedBox(width: 15.0),
                                       InfoBox(
@@ -83,9 +86,9 @@ class CasesScreen extends StatelessWidget {
                                         bgColor: Colors.red,
                                         title: '$totalCases',
                                         number: snapshot.data.totalCases,
-                                        color: Colors.red[300],
+                                        color: Colors.white,
                                         icon: Icon(FontAwesome.bed,
-                                            color: Colors.white, size: 25),
+                                            color: Colors.red, size: 25),
                                       ),
                                     ],
                                   ),
@@ -97,9 +100,9 @@ class CasesScreen extends StatelessWidget {
                                         bgColor: Colors.green,
                                         title: '$recovered',
                                         number: snapshot.data.recovered,
-                                        color: Colors.green[400],
+                                        color: Colors.white,
                                         icon: Icon(FontAwesome.check_circle_o,
-                                            color: Colors.white, size: 25),
+                                            color: Colors.green, size: 25),
                                       ),
                                       const SizedBox(width: 15.0),
                                       InfoBox(
@@ -107,9 +110,9 @@ class CasesScreen extends StatelessWidget {
                                         bgColor: Colors.blue,
                                         title: '$activeCases',
                                         number: snapshot.data.activeCases,
-                                        color: Colors.blue[300],
+                                        color: Colors.white,
                                         icon: Icon(Icons.mood,
-                                            color: Colors.white, size: 25),
+                                            color: Colors.blue, size: 25),
                                       ),
                                     ],
                                   ),
@@ -121,6 +124,50 @@ class CasesScreen extends StatelessWidget {
                               child: CircularProgressIndicator(),
                             );
                     }),
+                const SizedBox(height: 25.0),
+//                const SizedBox(height: 25.0),
+//                StreamBuilder<WorldCases>(
+//                  stream: cases.worldCases,
+//                  builder: (_, snapshot) {
+//                    return snapshot.hasData
+//                        ? Padding(
+//                            padding: const EdgeInsets.all(8.0),
+//                            child: ListTile(
+//                              contentPadding: EdgeInsets.symmetric(
+//                                  horizontal: 20.0, vertical: 10.0),
+//                              leading: Container(
+//                                padding: EdgeInsets.only(right: 12.0),
+//                                decoration: new BoxDecoration(
+//                                    border: new Border(
+//                                        right: new BorderSide(
+//                                            width: 1.0,
+//                                            color: Colors.blueGrey[900]))),
+//                                child: Icon(Icons.linear_scale,
+//                                    color: Colors.blueGrey[900]),
+//                              ),
+//                              title: Align(
+//                                alignment: Alignment.center,
+//                                child: Text(
+//                                  "Introduction to Driving",
+//                                  style: TextStyle(
+//                                      color: Colors.blueGrey[900],
+//                                      fontWeight: FontWeight.bold),
+//                                ),
+//                              ),
+//                              // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
+//
+//                              subtitle: Row(
+//                                children: <Widget>[
+//                                  Text(" Intermediate",
+//                                      style: TextStyle(
+//                                          color: Colors.blueGrey[900]))
+//                                ],
+//                              ),
+//                            ),
+//                          )
+//                        : Center();
+//                  },
+//                ),
               ],
             ),
           ),

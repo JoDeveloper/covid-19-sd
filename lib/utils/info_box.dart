@@ -5,7 +5,7 @@ class InfoBox extends StatelessWidget {
   final Icon icon;
   final Color color;
   final Color bgColor;
-  final int number;
+  final dynamic number;
   final Color titleColor;
   final Function onPressed;
 
@@ -48,14 +48,17 @@ class InfoBox extends StatelessWidget {
                       SizedBox(width: 25.0),
                       number == null
                           ? CircularProgressIndicator()
-                          : Text(
-                              '$number',
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                              textAlign: TextAlign.center,
-                            ),
+                          : Align(
+                        alignment: Alignment.topRight,
+                            child: Text(
+                                '$number',
+                                style: TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                                textAlign: TextAlign.center,
+                              ),
+                          ),
                     ],
                   ),
                   SizedBox(height: 5),

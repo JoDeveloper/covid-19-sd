@@ -13,7 +13,7 @@ class Info extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            color: Colors.transparent,
+            color: Colors.white,
           ),
           ListView(
             children: <Widget>[
