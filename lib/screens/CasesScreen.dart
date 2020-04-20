@@ -20,8 +20,8 @@ class CasesScreen extends StatelessWidget {
     final String recovered = "حالات شَفيت";
     final String activeCases = "تحت الرعاية الطبية";
     final List<Color> listColors = [
-      Colors.blueGrey[800],
       Colors.red,
+      Colors.blueGrey[800],
       Colors.green,
       Colors.blue
     ];
@@ -61,6 +61,8 @@ class CasesScreen extends StatelessWidget {
                                     margin: const EdgeInsets.all(8.0),
                                     child: PieChart(
                                       dataMap: dataMap,
+                                      legendPosition: LegendPosition.right,
+                                      chartValueStyle: TextStyle(color: Colors.white),
                                       animationDuration:
                                           Duration(milliseconds: 5000),
                                       colorList: listColors,
