@@ -25,7 +25,7 @@ class CovidCasesBloc {
 
   _getCases() async {
     changeCases(await _casesService.getCases());
-    changeWorldCases(await _casesService.getWorldCases());
+//    changeWorldCases(await _casesService.getWorldCases());
   }
 
   dispose() {

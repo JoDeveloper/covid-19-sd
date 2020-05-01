@@ -1,4 +1,4 @@
-package com.jodeveloper.covidsudan
+package com.jodeveloper.covidsd
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

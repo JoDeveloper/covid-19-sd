@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:undraw/undraw.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -20,6 +18,7 @@ class Info extends StatelessWidget {
               UnDraw(
                 color: Colors.lightGreen,
                 width: 250.0,
+                errorWidget: Center(),
                 illustration: UnDrawIllustration.doctors,
               ),
               const Align(

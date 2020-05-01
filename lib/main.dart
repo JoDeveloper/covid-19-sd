@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.tajawal().fontFamily,
         primarySwatch: Colors.grey,
       ),
-      home: Provider(create: (context) => CasesProivder(), child: MyHomePage()),
+      home: Provider(
+        create: (context) => CasesProivder(),
+        child: MyHomePage(),
+      ),
     );
   }
 }

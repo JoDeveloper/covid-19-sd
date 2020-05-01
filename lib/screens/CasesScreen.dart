@@ -1,5 +1,3 @@
-import 'package:covidsudan/model/world_cases.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:pie_chart/pie_chart.dart';
@@ -20,7 +18,6 @@ class CasesScreen extends StatelessWidget {
     final String recovered = "حالات شَفيت";
     final String activeCases = "تحت الرعاية الطبية";
     final List<Color> listColors = [
-      Colors.red,
       Colors.blueGrey[800],
       Colors.green,
       Colors.blue
@@ -39,13 +36,23 @@ class CasesScreen extends StatelessWidget {
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         dataMap.putIfAbsent(
-                            "$totalCases", () => snapshot.data.totalCases + .0);
+                            "$deaths",
+                            () =>
+                                snapshot.data.deaths +
+                                .0 / snapshot.data.totalCases +
+                                .0);
                         dataMap.putIfAbsent(
-                            "$deaths", () => snapshot.data.deaths + .0);
+                            "$recovered",
+                            () =>
+                                snapshot.data.recovered +
+                                .0 / snapshot.data.totalCases +
+                                .0);
                         dataMap.putIfAbsent(
-                            "$recovered", () => snapshot.data.recovered + .0);
-                        dataMap.putIfAbsent("$activeCases",
-                            () => snapshot.data.activeCases + .0);
+                            "$activeCases",
+                            () =>
+                                snapshot.data.activeCases +
+                                .0 / snapshot.data.totalCases +
+                                .0);
                       }
                       return snapshot.hasData
                           ? Padding(
@@ -62,7 +69,8 @@ class CasesScreen extends StatelessWidget {
                                     child: PieChart(
                                       dataMap: dataMap,
                                       legendPosition: LegendPosition.right,
-                                      chartValueStyle: TextStyle(color: Colors.white),
+                                      chartValueStyle:
+                                          TextStyle(color: Colors.white),
                                       animationDuration:
                                           Duration(milliseconds: 5000),
                                       colorList: listColors,
@@ -127,49 +135,6 @@ class CasesScreen extends StatelessWidget {
                             );
                     }),
                 const SizedBox(height: 25.0),
-//                const SizedBox(height: 25.0),
-//                StreamBuilder<WorldCases>(
-//                  stream: cases.worldCases,
-//                  builder: (_, snapshot) {
-//                    return snapshot.hasData
-//                        ? Padding(
-//                            padding: const EdgeInsets.all(8.0),
-//                            child: ListTile(
-//                              contentPadding: EdgeInsets.symmetric(
-//                                  horizontal: 20.0, vertical: 10.0),
-//                              leading: Container(
-//                                padding: EdgeInsets.only(right: 12.0),
-//                                decoration: new BoxDecoration(
-//                                    border: new Border(
-//                                        right: new BorderSide(
-//                                            width: 1.0,
-//                                            color: Colors.blueGrey[900]))),
-//                                child: Icon(Icons.linear_scale,
-//                                    color: Colors.blueGrey[900]),
-//                              ),
-//                              title: Align(
-//                                alignment: Alignment.center,
-//                                child: Text(
-//                                  "Introduction to Driving",
-//                                  style: TextStyle(
-//                                      color: Colors.blueGrey[900],
-//                                      fontWeight: FontWeight.bold),
-//                                ),
-//                              ),
-//                              // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
-//
-//                              subtitle: Row(
-//                                children: <Widget>[
-//                                  Text(" Intermediate",
-//                                      style: TextStyle(
-//                                          color: Colors.blueGrey[900]))
-//                                ],
-//                              ),
-//                            ),
-//                          )
-//                        : Center();
-//                  },
-//                ),
               ],
             ),
           ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 import '../utils/colors.dart';
-import '../utils/theme.dart';
+
 
 class CaseCard extends StatelessWidget {
   final String title;
@@ -53,14 +53,11 @@ class CaseCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(title,
-                            style: AppTheme.h2Style.copyWith(
-                                color: LightColor.darkgrey,
-                                fontWeight: FontWeight.bold,
+                            style:TextStyle(fontWeight: FontWeight.bold,
                                 fontSize: 16)),
                         SizedBox(height: hp(1)),
                         Text(subTitle,
-                            style: AppTheme.h2Style.copyWith(
-                                color: LightColor.darkgrey.withOpacity(0.5),
+                            style: TextStyle(fontWeight: FontWeight.bold,
                                 fontSize: 16))
                       ],
                     )
