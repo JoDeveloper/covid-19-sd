@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../model/cases.dart';
+import '../model/cities.dart';
 
 class CasesService {
   Future<Cases> getCases() async {
@@ -13,9 +14,14 @@ class CasesService {
         : null;
   }
 
-//  Future<WorldCases> getWorldCases() async {
-//    var response = await http.get('https://covid2019-api.herokuapp.com/total');
-//
-//    return WorldCases.fromJson(json.decode(response.body));
-//  }
+  Future<List<Cities>> getCitiesCases() async {
+    // var response = await http.get('https://covid19.sd/cities.json');
+
+    http.Response response = await http.get('https://covid19.sd/cities.json',
+        headers: {'Content-Type': 'application/json'});
+
+    List<dynamic> res = json.decode(utf8.decode(response.bodyBytes));
+    print(res);
+    return res.map((e) => Cities.fromJson(json.encode(e))).toList();
+  }
 }

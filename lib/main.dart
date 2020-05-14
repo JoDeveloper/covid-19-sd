@@ -41,12 +41,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final HomePage _homePage = new HomePage();
-  final Questions _questions = new Questions();
-  final CasesScreen _cases = new CasesScreen();
-  final Info _info = new Info();
+  final HomePage _homePage = HomePage();
+  final Questions _questions = Questions();
+  final CasesScreen _cases = CasesScreen();
+  final Info _info = Info();
 
-  Widget _showPage = new HomePage();
+  Widget _showPage = HomePage();
 
   Widget _pageChooser(int page) {
     switch (page) {
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
         return _info;
         break;
       default:
-        return new Container(
+        return Container(
           color: Colors.grey,
           child: const Center(
             child: ListTile(
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               subtitle: const Text(
                 "\nEmpty Page",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           ),

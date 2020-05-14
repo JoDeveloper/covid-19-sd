@@ -4,7 +4,6 @@ import 'package:responsive_screen/responsive_screen.dart';
 
 import '../utils/colors.dart';
 
-
 class CaseCard extends StatelessWidget {
   final String title;
   final String subTitle;
@@ -27,7 +26,7 @@ class CaseCard extends StatelessWidget {
         color: LightColor.cardBackground,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          new BoxShadow(
+          BoxShadow(
               color: Colors.grey[100],
               blurRadius: 4.0,
               spreadRadius: 3.5,
@@ -53,12 +52,12 @@ class CaseCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(title,
-                            style:TextStyle(fontWeight: FontWeight.bold,
-                                fontSize: 16)),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16)),
                         SizedBox(height: hp(1)),
                         Text(subTitle,
-                            style: TextStyle(fontWeight: FontWeight.bold,
-                                fontSize: 16))
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16))
                       ],
                     )
                   ]),

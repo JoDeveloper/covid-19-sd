@@ -47,7 +47,7 @@ class InfoBox extends StatelessWidget {
                       ),
                       SizedBox(width: 25.0),
                       number == null
-                          ? CircularProgressIndicator()
+                          ? const CircularProgressIndicator()
                           : Align(
                         alignment: Alignment.topRight,
                             child: Text(
@@ -61,7 +61,7 @@ class InfoBox extends StatelessWidget {
                           ),
                     ],
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Directionality(
                       textDirection: TextDirection.rtl,
                       child: Align(

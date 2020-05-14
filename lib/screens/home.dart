@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_screen/responsive_screen.dart';
-import 'package:undraw/undraw.dart';
 
 import '../utils/covidData.dart';
 
@@ -11,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     final Function wp = Screen(context).wp;
@@ -23,11 +22,11 @@ class _HomePageState extends State<HomePage> {
         ),
         ListView(
           children: <Widget>[
-            UnDraw(
-              color: Colors.lightGreen,
-              illustration: UnDrawIllustration.doctor,
+            SizedBox(height: hp(15)),
+            SvgPicture.asset(
+              "images/doctor.svg",
+              // color: Colors.lightGreen,
               height: hp(20),
-              errorWidget: Center(),
             ),
             const Padding(
               padding: const EdgeInsets.only(top: 10, right: 50),
@@ -62,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                   CarouselSlider(
                     autoPlayInterval: Duration(seconds: 10),
 //                    viewportFraction: 0.9,
-                    aspectRatio: 4/2,
+                    aspectRatio: 4 / 2,
 
                     autoPlay: true,
                     enlargeCenterPage: true,
@@ -88,5 +87,4 @@ class _HomePageState extends State<HomePage> {
       ],
     );
   }
-
 }

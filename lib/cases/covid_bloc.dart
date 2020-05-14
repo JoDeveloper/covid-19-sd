@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:covidsudan/model/world_cases.dart';
+import 'package:covidsudan/model/cities.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../model/cases.dart';
 import '../services/covid_case_service.dart';
-import 'package:rxdart/rxdart.dart';
 
 class CovidCasesBloc {
   final _cases = BehaviorSubject<Cases>();
   final _casesService = CasesService();
-  final _worldCases = BehaviorSubject<WorldCases>();
+  final _citiesCases = BehaviorSubject<List<Cities>>();
 
   CovidCasesBloc() {
     this._getCases();
@@ -18,18 +18,18 @@ class CovidCasesBloc {
   }
 
   Stream<Cases> get cases => _cases.stream;
-  Stream<WorldCases> get worldCases => _worldCases.stream;
+  Stream<List<Cities>> get citiesCases => _citiesCases.stream;
 
   Function(Cases) get changeCases => _cases.sink.add;
-  Function(WorldCases) get changeWorldCases => _worldCases.sink.add;
+  Function(List<Cities>) get changeCitiesCases => _citiesCases.sink.add;
 
   _getCases() async {
     changeCases(await _casesService.getCases());
-//    changeWorldCases(await _casesService.getWorldCases());
+    changeCitiesCases(await _casesService.getCitiesCases());
   }
 
   dispose() {
     _cases.close();
-    _worldCases.close();
+    _citiesCases.close();
   }
 }

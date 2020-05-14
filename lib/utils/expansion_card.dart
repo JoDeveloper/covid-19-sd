@@ -6,7 +6,7 @@ ExpansionTileCard getCard(String title, String description) {
   return ExpansionTileCard(
     baseColor: Colors.transparent,
     expandedColor: Colors.transparent,
-    leading: Icon(
+    leading: const Icon(
       Icons.info_outline,
       color: Colors.black,
     ),
@@ -16,12 +16,12 @@ ExpansionTileCard getCard(String title, String description) {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           title,
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
         ),
       ),
     ),
     children: <Widget>[
-      Divider(
+      const Divider(
         thickness: 1.0,
         height: 1.0,
       ),
@@ -36,7 +36,7 @@ ExpansionTileCard getCard(String title, String description) {
             textDirection: TextDirection.rtl,
             child: Text(
               """ $description""",
-              style: TextStyle(color: Colors.black,fontSize: 15.0),
+              style: TextStyle(color: Colors.black, fontSize: 15.0),
             ),
           ),
         ),
