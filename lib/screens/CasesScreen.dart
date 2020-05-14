@@ -210,10 +210,10 @@ class _CasesScreenState extends State<CasesScreen>
       floatingActionButton: GestureDetector(
         child: FloatingActionButton(
           child: AnimatedIcon(
-              icon: AnimatedIcons.home_menu, progress: _controller),
+              icon: AnimatedIcons.menu_home, progress: _controller),
           elevation: 5,
-          backgroundColor: Colors.white54,
-          foregroundColor: Colors.white,
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black87,
           onPressed: () async {
             if (_controller.isDismissed)
               _controller.forward();
